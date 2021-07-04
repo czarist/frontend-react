@@ -1,5 +1,19 @@
+body {
+    margin: 0;
+    background-color: #F0EFEF;
+}
+
 .App {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #000;
+    height: 60px;
+}
+
+.posts {
+    list-style: none;
+    margin: 0px auto;
+    width: 800px;
+    text-align: left;
 }
