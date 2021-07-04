@@ -1,69 +1,47 @@
-import React from 'react';
-import axios, { CancelTokenSource } from 'axios';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import logoMoovin from './logo-roda.png';
-
-interface IPost {
-  id: number;
-  userId?: number;
-  title: string;
-  body: string;
-}
-
-const defaultPosts: IPost[] = [];
+import Pagination from './components/Pagination';
+import Posts from './components/Posts';
+import './table.scss';
 
 const App = () => {
-  const [posts, setPosts]: [IPost[], (posts: IPost[]) => void] =
-    React.useState(defaultPosts);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
 
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] =
-    React.useState<boolean>(true);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      const res = await axios.get('https://gorest.co.in/public-api/posts');
+      //  console.log(res.data.data);
+      setPosts(res.data.data);
+      setLoading(false);
+    };
 
-  const [error, setError]: [string, (error: string) => void] =
-    React.useState('');
-
-  const cancelToken = axios.CancelToken; //create cancel token
-  const [cancelTokenSource, setCancelTokenSource]: [
-    CancelTokenSource,
-    (cancelTokenSource: CancelTokenSource) => void,
-  ] = React.useState(cancelToken.source());
-
-  const handleCancelClick = () => {
-    if (cancelTokenSource) {
-      cancelTokenSource.cancel('User cancelled operation');
-    }
-  };
-
-  React.useEffect(() => {
-    axios
-      .get<IPost[]>('https://jsonplaceholder.typicode.com/posts', {
-        cancelToken: cancelTokenSource.token,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then((response) => {
-        setPosts(response.data);
-        setLoading(false);
-      })
-      .catch((ex) => {
-        setLoading(false);
-      });
+    fetchPosts();
   }, []);
 
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div>
       <div className="App">
         <img alt="Logo da Moovin" src={logoMoovin} />
       </div>
       <div className="">
-        <ul className="posts">
-          {posts.map((post) => (
-            <li key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.body}</p>
-            </li>
-          ))}
-        </ul>
+        <Posts posts={currentPosts} loading={loading} />
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
       </div>
     </div>
   );

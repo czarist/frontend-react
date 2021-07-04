@@ -14,6 +14,109 @@ body {
 .posts {
     list-style: none;
     margin: 0px auto;
-    width: 800px;
     text-align: left;
+    background-color: #F0EFEF;
+}
+
+/* flexbox */
+.fx {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.fx-center {
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+.fx-center-top {
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+.fx-center-bottom {
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+.fx-rw {
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+}
+
+.fx-cl {
+    flex-direction: column;
+    flex-flow: column;
+    -webkit-flex-flow: column;
+    -ms-flex-flow: column;
+    -moz-flex-flow: column;
+}
+
+.fx-space {
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.fx-left {
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.fx-right {
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.fx-a-r {
+    align-items: flex-end;
+}
+
+/* end flexbox */
+.wrap {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.external-content {
+    padding: 20px;
+    background-color: white;
+    margin-top: 2pc;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .wrap {
+        width: 95%;
+        max-width: 95%;
+    }
 }
