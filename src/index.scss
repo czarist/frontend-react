@@ -23,6 +23,7 @@ body {
     text-align: left;
     background-color: #FFF;
     border: 2px solid #F0EFEF;
+    border-radius: 10px;
 }
 
 /* flexbox */
@@ -156,6 +157,15 @@ a.page-link {
 }
 
 @media only screen and (max-width: 1024px) {
+    .content-numbers {
+        top: -22px;
+        left: -5pc;
+    }
+
+    .flex-row {
+        font-weight: 600;
+    }
+
     .wrap {
         width: 95%;
         max-width: 95%;
