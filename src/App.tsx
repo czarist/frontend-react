@@ -17,7 +17,9 @@ const App = () => {
       const res = await axios.get('https://gorest.co.in/public-api/posts');
       //  console.log(res.data.data);
       setPosts(res.data.data);
-      setLoading(false);
+      setTimeout(function () {
+        setLoading(false);
+      }, 1500);
     };
 
     fetchPosts();

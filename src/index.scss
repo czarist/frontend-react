@@ -122,6 +122,15 @@ a.page-link {
     transition: 0.5s;
 }
 
+.loading-open {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #F0EFEF;
+
+}
+
 .wrap {
     width: 1200px;
     max-width: 100%;
@@ -138,6 +147,7 @@ a.page-link {
     position: relative;
     top: -50px;
     left: -2pc;
+    z-index: 0;
 }
 
 a.page-link {
@@ -150,4 +160,119 @@ a.page-link {
         width: 95%;
         max-width: 95%;
     }
+}
+
+
+@keyframes ldio-735vs5d14sl {
+    0% {
+        transform: translate(12px, 80px) scale(0);
+    }
+
+    25% {
+        transform: translate(12px, 80px) scale(0);
+    }
+
+    50% {
+        transform: translate(12px, 80px) scale(1);
+    }
+
+    75% {
+        transform: translate(80px, 80px) scale(1);
+    }
+
+    100% {
+        transform: translate(148px, 80px) scale(1);
+    }
+}
+
+@keyframes ldio-735vs5d14sl-r {
+    0% {
+        transform: translate(148px, 80px) scale(1);
+    }
+
+    100% {
+        transform: translate(148px, 80px) scale(0);
+    }
+}
+
+@keyframes ldio-735vs5d14sl-c {
+    0% {
+        background: #0a0a0a
+    }
+
+    25% {
+        background: #96f95c
+    }
+
+    50% {
+        background: #ffffff
+    }
+
+    75% {
+        background: #28292f
+    }
+
+    100% {
+        background: #0a0a0a
+    }
+}
+
+.ldio-735vs5d14sl div {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(80px, 80px) scale(1);
+    background: #0a0a0a;
+    animation: ldio-735vs5d14sl 1s infinite cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.ldio-735vs5d14sl div:nth-child(1) {
+    background: #28292f;
+    transform: translate(148px, 80px) scale(1);
+    animation: ldio-735vs5d14sl-r 0.25s infinite cubic-bezier(0, 0.5, 0.5, 1), ldio-735vs5d14sl-c 1s infinite step-start;
+}
+
+.ldio-735vs5d14sl div:nth-child(2) {
+    animation-delay: -0.25s;
+    background: #0a0a0a;
+}
+
+.ldio-735vs5d14sl div:nth-child(3) {
+    animation-delay: -0.5s;
+    background: #28292f;
+}
+
+.ldio-735vs5d14sl div:nth-child(4) {
+    animation-delay: -0.75s;
+    background: #ffffff;
+}
+
+.ldio-735vs5d14sl div:nth-child(5) {
+    animation-delay: -1s;
+    background: #96f95c;
+}
+
+.loadingio-spinner-ellipsis-0i1wl0219w6 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: #f1f2f3;
+}
+
+.ldio-735vs5d14sl {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    background-color: #F0EFEF;
+
+    /* see note above */
+}
+
+.ldio-735vs5d14sl div {
+    box-sizing: content-box;
 }
