@@ -31,19 +31,21 @@ const App = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
-    <div>
-      <div className="App">
-        <img alt="Logo da Moovin" src={logoMoovin} />
-      </div>
-      <div className="">
-        <Posts posts={currentPosts} loading={loading} />
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        />
-      </div>
-    </div>
+    <main>
+      <section>
+        <div className="App">
+          <img alt="Logo da Moovin" src={logoMoovin} />
+        </div>
+        <div className="">
+          <Posts posts={currentPosts} loading={loading} />
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={posts.length}
+            paginate={paginate}
+          />
+        </div>
+      </section>
+    </main>
   );
 };
 export default App;
