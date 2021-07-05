@@ -36,14 +36,14 @@ const App = () => {
         <header className="App">
           <img alt="Logo da Moovin" src={logoMoovin} />
         </header>
-        <div className="">
+        <article>
           <Posts posts={currentPosts} loading={loading} />
           <Pagination
             postsPerPage={postsPerPage}
             totalPosts={posts.length}
             paginate={paginate}
           />
-        </div>
+        </article>
       </section>
     </main>
   );
