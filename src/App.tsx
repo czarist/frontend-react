@@ -33,9 +33,9 @@ const App = () => {
   return (
     <main>
       <section>
-        <div className="App">
+        <header className="App">
           <img alt="Logo da Moovin" src={logoMoovin} />
-        </div>
+        </header>
         <div className="">
           <Posts posts={currentPosts} loading={loading} />
           <Pagination
