@@ -5,8 +5,8 @@ const Posts = ({ posts, loading }) => {
     return (
       <div className="wrap fx fx-center fx-cl loading-open">
         <h2>Carregando...</h2>
-        <div class="loadingio-spinner-ellipsis-0i1wl0219w6">
-          <div class="ldio-735vs5d14sl">
+        <div className="loadingio-spinner-ellipsis-0i1wl0219w6">
+          <div className="ldio-735vs5d14sl">
             <div></div>
             <div></div>
             <div></div>
