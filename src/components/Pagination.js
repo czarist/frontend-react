@@ -8,7 +8,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
 
   return (
-    <div className="fx fx-center wrap">
+    <div className="fx fx-right wrap content-numbers">
       <nav>
         <div className="pagination fx">
           {pageNumbers.map((number) => (
@@ -18,7 +18,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
                 href="!#"
                 className="page-link"
               >
-                {number}
+                <b>{number}</b>
               </a>
             </div>
           ))}

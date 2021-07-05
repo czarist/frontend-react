@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import logoMoovin from './logo-roda.png';
+import logoMoovin from './logo.svg';
 import Pagination from './components/Pagination';
 import Posts from './components/Posts';
 import './table.scss';
@@ -23,12 +23,10 @@ const App = () => {
     fetchPosts();
   }, []);
 
-  // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div>
